@@ -1,0 +1,79 @@
+/*Utility Class*/
+.hide
+{
+	display: none;
+}
+
+/* General rules - scales images, videos to size of container */
+img, embed, object, video {
+  max-width: 100%; }
+
+
+/*switch box model*/
+html {
+  box-sizing: border-box; 
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+/*Fix for scaling of images IE*/
+img {
+  -ms-interpolation-mode: bicubic; 
+}
+
+/*Fonts*/
+@font-face {
+font-family: 'lustriaregular';
+src: url('../fonts/lustria-regular-webfont.eot');
+src: url('../fonts/lustria-regular-webfont.eot?#iefix') format('embedded-opentype'),
+url('../fonts/lustria-regular-webfont.woff') format('woff'),
+url('../fonts/lustria-regular-webfont.ttf') format('truetype'),
+url('../fonts/lustria-regular-webfont.svg#lustriaregular') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'latoregular';
+src: url('../fonts/lato-regular-webfont.eot');
+src: url('../fonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'),
+url('../fonts/lato-regular-webfont.woff') format('woff'),
+url('../fonts/lato-regular-webfont.ttf') format('truetype'),
+url('../fonts/lato-regular-webfont.svg#latoregular') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+/*General Rules for Elements*/
+
+body
+{
+	font-family: 'latoregular', Helvetica, Arial, sans-serif;
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+}
+
+a 
+{ 
+  color:#000; 
+  text-decoration: none;  
+  transition:all .1s linear 0s;
+}
+
+h2, h3
+{
+	font-family: 'lustriaregular', Times, "Times New Roman", serif;
+	color: #215445;
+}
+
+.container {
+  margin: 0px auto;
+  padding: 0px 15px 0 15px;
+  max-width: 1200px; 
+}
+
