@@ -11,7 +11,7 @@ img, embed, object, video {
 
 /*switch box model*/
 html {
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 *,
@@ -21,7 +21,7 @@ html {
 
 /*Fix for scaling of images IE*/
 img {
-  -ms-interpolation-mode: bicubic; 
+  -ms-interpolation-mode: bicubic;
 }
 
 /*Fonts*/
@@ -58,10 +58,10 @@ body
 	font-size: 100%;
 }
 
-a 
-{ 
-  color:#000; 
-  text-decoration: none;  
+a
+{
+  color:#000;
+  text-decoration: none;
   transition:all .1s linear 0s;
 }
 
@@ -74,6 +74,149 @@ h2, h3
 .container {
   margin: 0px auto;
   padding: 0px 15px 0 15px;
-  max-width: 1200px; 
+  max-width: 1200px;
 }
 
+/* Header and Mobile Nav */
+#mainHeader {margin: 5px 0 20px 0; }
+
+#mainNav {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+}
+
+#mainNav button {margin-left: auto;}
+
+#searchCon {display: flex; flex-direction: row;}
+
+#mainNav input[type=text] {
+	display: block;
+	width: 100%;
+	height: 40px;
+	padding: 5px;
+	border: 1px solid #cacaca;
+	border-radius: 3px 0 0 3px;
+	background-color: #fefefe;
+	box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+	line-height: 1.5;
+	color:#0a0a0a;
+}
+
+#mainNav input [type=submit] {
+	height: 40px;
+	width: 100px;
+	border: 1px solid transparent;
+	border-radius: 0 3px 3px 0;
+	font-size: 0.75em;
+	line-height: 1;
+	text-align: center;
+	cursor: pointer;
+	background-color: #8fa771;
+	color: #fefefe;
+}
+
+/* hide the menu by default */
+#burgerCon {
+	display: none;
+	margin-top: 20px;
+}
+
+#burgerCon.slideToggle {display: block;}
+
+#mainNav button {
+	background: url(../img/burger.svg) center no-repeat;
+	border: 0;
+	width: 35px;
+	height: 35px;
+	transition: all 400ms ease;
+}
+
+#mainNav button.expanded{
+	/* browser prefixed for transform */
+	-webkit-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+
+	/*default transform */
+	transform: rotate(90deg);
+}
+
+#mainNav li a {
+	display: block;
+	color: #8ea76d;
+	padding: 10px 0;
+	text-align: center;
+}
+
+#mainNav li { border-bottom: 1px solid #efefef; }
+
+#mainNav li:first-child { border-top: 1px solid #efefef; }
+
+#mainNav li:last-child { margin-bottom: 10px; }
+
+#mainNav li a:hover { background-color: #efefef; }
+
+#searchForm {margin-top: 20px;}
+
+#wollastonLogo {
+	display: block;
+	max-width: 120px;
+	margin: 0 auto;
+}
+
+/* handle the nav at desktop -> reflow to fi a new size */
+
+@media screen and (min-width: 64em) {
+	#mainHeader {display: flex; margin-top: 20px; }
+
+	#button { display: none; }
+
+	#burgerCon {display: flex; flex-direction: column; margin: 0;}
+
+	#mainNav {
+		text-align: right;
+		text-transform: uppercase;
+		font-size: 0.875em;
+		margin-left: auto;
+	}
+
+	#burgerMenu {
+		text-align: right;
+	}
+
+	#mainNav li{
+		border-bottom: none;
+		display: inline;
+		margin-left: 20px;
+	}
+
+	#mainNav li a {
+		background-color: #fff;
+		display: inline;
+		padding: 5px 0;
+		text-decoration: none;
+		color: #6d6d6c;
+	}
+
+	#mainNav li a:hover{
+		color: #8fa777;
+		border-bottom: 3px solid #8fa771;
+		padding-bottom: 5px;
+		background-color: transparent;
+	}
+
+	#mainNav li:first-child {border-top: none;}
+
+	#mainNav li:last-child {margin-bottom: 0;}
+
+	#searchForm {
+		width: 97%;
+		order: -1;
+		margin: 0 0 50px auto;
+	}
+
+	#logoCon {order: -1;}
+
+	#wollastonLogo{max-width: 160px;}
+
+}
